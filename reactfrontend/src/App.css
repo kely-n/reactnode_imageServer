@@ -37,6 +37,10 @@
   }
 }
 
+.image_show{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .submit{
   cursor: pointer;
@@ -46,6 +50,21 @@
   padding: 10px 50px;
   border-radius: 8px;
   font-weight: 500;
+}
+
+.getBut{
+  color: rgb(34, 105, 211);
+  display: inline-block;
+  padding: 10px 50px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.served_img{
+  max-width: 300px;
+  height: min-content;
+}
+  .getBut:hover{
+    color:rgb(38, 85, 240)
 }
 
 .submit:hover{
