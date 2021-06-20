@@ -1,23 +1,18 @@
-const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { DataTypes } = require('sequelize');
 
-//creating an image schema to store images in a mongodb database
+module.exports = model;
 
-var Image_Schema = new Schema({
-	_id: false,
-	name : {
-		type: String,
-		unique: true,
-    		index: true,
-		required: true
-	}, 
-	url: {
-		type: String,
-		required: true
-	}
-})
+function model(sequelize) {
+    const attributes = {
+        name: { type: DataTypes.STRING, allowNull: false,  primaryKey: true},
+        location: { type: DataTypes.STRING, allowNull: false },
+    };
 
-var Image = mongoose.model('Image', Image_Schema);
 
-module.exports = Image;
+    return sequelize.define('image', attributes,
+    {
+        timestamps: false
+    });
+}
+
